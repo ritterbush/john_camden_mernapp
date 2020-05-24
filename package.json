@@ -1,0 +1,30 @@
+{
+  "name": "mern-storybook-workspaces-monorepo-boilerplate",
+  "version": "1.0.0",
+  "description": "Monorepo boilerplate: Node, Yarn Workspaces, Lerna, Typescript, Express, cors, Mongo, Storybook, Sass, CRA",
+  "main": "index.js",
+  "repository": "https://github.com/jcamden/MERN-Storybook-Workspaces-monorepo-boilerplate",
+  "author": "John Camden <john.camden@gmail.com> (https://github.com/jcamden)",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^3.18.3"
+  },
+  "scripts": {
+    "story": "lerna run story --stream",
+    "prestart": "lerna run libbuild --stream",
+    "start": "lerna run start --stream",
+    "start:client": "yarn --cwd packages/client start",
+    "start:server": "yarn --cwd packages/server start",
+    "add:client": "yarn --cwd packages/client add",
+    "add:server": "yarn --cwd packages/server add",
+    "add:lib": "yarn --cwd packages/lib add",
+    "remove:client": "yarn --cwd packages/client remove",
+    "remove:server": "yarn --cwd packages/server remove",
+    "remove:lib": "yarn --cwd packages/lib remove",
+    "apidoc": "yarn --cwd packages/server apidoc"
+  }
+}
